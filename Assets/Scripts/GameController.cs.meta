@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3ba71fda957a77c4393ad08b625460da
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LapCounter: {instanceID: 0}
+  - SpeedText: {instanceID: 0}
+  - CarController: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
