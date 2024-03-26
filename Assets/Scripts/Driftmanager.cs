@@ -40,7 +40,7 @@ public class Driftmanager : MonoBehaviour
     [SerializeField] private Image driftGuageImage1;
     [SerializeField] private Image driftGuageImage2;
 
-    float fillSpeedCoefficient = 0.002f;
+    public float fillSpeedCoefficient = 0.006f;
 
     public bool ScoringEnabled
     {
@@ -70,8 +70,8 @@ public class Driftmanager : MonoBehaviour
 
         driftAngle = Mathf.Abs(turnInput * turnStrength);
 
-        driftGuageImage1.fillAmount += (driftAngle * fillSpeedCoefficient);
-        driftGuageImage2.fillAmount += (driftAngle * fillSpeedCoefficient);
+        driftGuageImage1.fillAmount = driftAngle * fillSpeedCoefficient;
+        driftGuageImage2.fillAmount = driftAngle * fillSpeedCoefficient;
 
 
         if (driftAngle >= minimumAngle && speed > minimumSpeed)
