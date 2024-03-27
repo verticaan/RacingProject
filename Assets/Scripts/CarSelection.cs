@@ -10,6 +10,8 @@ public class CarSelection : MonoBehaviour
     [SerializeField] private Button nextButton;
     private int currentCar;
 
+    public CarStatsAnimation carStatsAnim;
+
     private void Start()
     {
         currentCar = SaveManager.instance.currentCar;
@@ -23,6 +25,28 @@ public class CarSelection : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(i == _index);
+        }
+
+        switch (_index)
+        {
+            case 0:
+                carStatsAnim.FrostBladeStatsAnimIn();
+                carStatsAnim.PaveMasterStatsAnimOut();
+                carStatsAnim.DesertShiftStatsAnimOut();
+                break;
+            case 1:
+                carStatsAnim.PaveMasterStatsAnimIn();
+                carStatsAnim.FrostBladeStatsAnimOut();
+                carStatsAnim.DesertShiftStatsAnimOut();
+                break;
+            case 2:
+                carStatsAnim.DesertShiftStatsAnimIn();
+                carStatsAnim.FrostBladeStatsAnimOut();
+                carStatsAnim.PaveMasterStatsAnimOut();
+                break;
+            default:
+                // Handle cases for other indices if needed
+                break;
         }
     }
 
