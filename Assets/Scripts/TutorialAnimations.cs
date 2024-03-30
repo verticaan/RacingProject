@@ -8,13 +8,25 @@ public class TutorialAnimations : MonoBehaviour
     GameObject hudPanel, driftscoreUI, timerUI, speedUI, minimapUI, driftUI, countdownUI, 
 
     tutorialSequenceBoxUI, tutorialTitleText, welcomeText, timerText, speedGuageText, minimapText, driftscoreText, endText, hudUI, driftUiText;
+
+    private CarController carController;
+
+    public TutorialCountdownController tutorialCountdownController;
     // Start is called before the first frame update
     void Start()
     {
-        LeanTween.moveLocal(tutorialTitleText, new Vector3(0f, 185f,0f),2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
+
+        carController = GameObject.FindObjectOfType<CarController>();
+        Begin();
+
+    }
+
+    void Begin()
+    {
+        carController.DisableInput();
+        LeanTween.moveLocal(tutorialTitleText, new Vector3(0f, 185f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 1f, 1f).setDelay(5f);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 0f, 2f).setDelay(10f).setOnComplete(Timer);
-
     }
 
     void Timer()
@@ -65,13 +77,7 @@ public class TutorialAnimations : MonoBehaviour
     {
         LeanTween.alpha(endText.GetComponent<RectTransform>(), 1f, 3f).setDelay(4f);
         LeanTween.alpha(endText.GetComponent<RectTransform>(), 0f, 3f).setDelay(8f);
-    }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        tutorialCountdownController.TutorialCountdown();
     }
 }

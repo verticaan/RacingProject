@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,9 +36,14 @@ public class CarController : MonoBehaviour
 
     private Quaternion targetRotation;
 
+    private Keybind keybindScript;
+
+    public float lerpSpeed = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
+        keybindScript = FindObjectOfType<Keybind>();
         theRB.transform.parent = null;
         turningVFX.SetActive(false);
         landingVFX.SetActive(false);
@@ -49,31 +55,57 @@ public class CarController : MonoBehaviour
         canInput = true;
     }
 
+    public void DisableInput()
+    {
+        canInput = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (!canInput) // Check if input is allowed
+        if (!canInput)
             return;
 
-        speedInput = 0f;
-        if (Input.GetAxis("Vertical") > 0)
+        float targetSpeedInput = 0f;
+        float targetTurnInput = 0f;
+
+        if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel1.text)))
         {
-            speedInput = Input.GetAxis("Vertical") * forwardAccel * 1000f;
+            targetSpeedInput = 1f; // Forward
         }
-        else if (Input.GetAxis("Vertical") < 0)
+        else if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel2.text)))
         {
-            speedInput = Input.GetAxis("Vertical") * reverseAccel * 1000f;
+            targetSpeedInput = -1f; // Reverse
         }
 
-        turnInput = Input.GetAxis("Horizontal");
+        if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel3.text)))
+        {
+            targetTurnInput = -1f;
+        }
+        else if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel4.text)))
+        {
+            targetTurnInput = 1f;
+        }
 
-        isMoving = Mathf.Abs(speedInput) > 0;
-        isTurning = Mathf.Abs(turnInput) > 0;
+        if (targetSpeedInput >= 0)
+        {
+            speedInput = Mathf.Lerp(speedInput, targetSpeedInput * forwardAccel * 1000f, lerpSpeed);
+        }
+        else
+        {
+            speedInput = Mathf.Lerp(speedInput, targetSpeedInput * reverseAccel * 1000f, lerpSpeed);
+        }
+
+        turnInput = Mathf.Lerp(turnInput, targetTurnInput, Time.deltaTime * lerpSpeed);
+
+        isMoving = Mathf.Abs(speedInput) > 0f;
+        isTurning = Mathf.Abs(turnInput) > 0f;
 
         if (grounded)
         {
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Input.GetAxis("Vertical"), 0f));
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime, 0f));
         }
+
 
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
         rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, turnInput * maxWheelTurn, rightFrontWheel.localRotation.eulerAngles.z);

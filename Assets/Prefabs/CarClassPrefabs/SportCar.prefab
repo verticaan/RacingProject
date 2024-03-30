@@ -6212,6 +6212,7 @@ MonoBehaviour:
   - {fileID: 3281956092667939424}
   turningVFX: {fileID: 3537054278779808905}
   landingVFX: {fileID: 1315144475189844316}
+  lerpSpeed: 7
 --- !u!1 &8576387058314717441
 GameObject:
   m_ObjectHideFlags: 0
