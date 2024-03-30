@@ -13,58 +13,48 @@ public class DisplayScreen : MonoBehaviour
     public Text qualityLabel;
     private int currentQualityIndex = 0;
     private int maxQualityIndex = 0;
-    
+
     public Text resolutionLabel;
     public List<ResItem> resolutions = new List<ResItem>();
     private int selectedResolution;
 
-    
-    
+    private const string FullscreenKey = "fullscreen";
+    private const string VsyncKey = "vsync";
+    private const string QualityIndexKey = "qualityIndex";
+    private const string ResolutionIndexKey = "resolutionIndex";
 
     void Start()
     {
-        fullScreenIsOn = Screen.fullScreen;
-        SetFullScreen(fullScreenIsOn);
-
-        if (QualitySettings.vSyncCount == 0)
-        {
-            vsyncIsOn = false;
-        }
-        else
-        {
-            vsyncIsOn = true;
-        }
-        SetVsync(vsyncIsOn);
-        SetVsyncLabel(vsyncIsOn);
-
-
-        bool foundRes = false;
-        for(int i = 0; i < resolutions.Count; i++)
-        {
-            if(Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
-            {
-                foundRes = true;
-
-                selectedResolution = i;
-
-                UpdateResLabel();
-            }
-        }
-
-        if (!foundRes)
-        {
-            ResItem newRes = new ResItem();
-            newRes.horizontal = Screen.width;
-            newRes.vertical = Screen.height;
-
-            resolutions.Add(newRes);
-            selectedResolution = resolutions.Count -1;
-
-            UpdateResLabel();
-        }
+        LoadDisplaySettings();
+        ApplyDisplay();
 
         maxQualityIndex = QualitySettings.names.Length - 1;
         UpdateQualityText();
+
+        // Update UI text labels to reflect loaded settings
+        fullscreenLabel.text = fullScreenIsOn ? "ON" : "OFF";
+        vsyncLabel.text = vsyncIsOn ? "ON" : "OFF";
+        UpdateResLabel();
+
+    }
+
+    void LoadDisplaySettings()
+    {
+        fullScreenIsOn = PlayerPrefs.GetInt(FullscreenKey, 1) == 1;
+        vsyncIsOn = PlayerPrefs.GetInt(VsyncKey, 1) == 1;
+        currentQualityIndex = PlayerPrefs.GetInt(QualityIndexKey, 0);
+        selectedResolution = PlayerPrefs.GetInt(ResolutionIndexKey, 0);
+
+        QualitySettings.SetQualityLevel(currentQualityIndex);
+    }
+
+    void SaveDisplaySettings()
+    {
+        PlayerPrefs.SetInt(FullscreenKey, fullScreenIsOn ? 1 : 0);
+        PlayerPrefs.SetInt(VsyncKey, vsyncIsOn ? 1 : 0);
+        PlayerPrefs.SetInt(QualityIndexKey, currentQualityIndex);
+        PlayerPrefs.SetInt(ResolutionIndexKey, selectedResolution);
+        PlayerPrefs.Save();
     }
 
     //Vsync
@@ -73,6 +63,7 @@ public class DisplayScreen : MonoBehaviour
         vsyncIsOn = !vsyncIsOn;
         SetVsync(vsyncIsOn);
         SetVsyncLabel(vsyncIsOn);
+        ApplyDisplay(); // Apply changes immediately
     }
 
     public void SetVsync(bool vsyncEnabled)
@@ -91,6 +82,7 @@ public class DisplayScreen : MonoBehaviour
     {
         fullScreenIsOn = !fullScreenIsOn;
         SetFullScreen(fullScreenIsOn);
+        ApplyDisplay(); // Apply changes immediately
     }
 
     public void SetFullScreen(bool isFullscreen)
@@ -119,6 +111,7 @@ public class DisplayScreen : MonoBehaviour
 
         QualitySettings.SetQualityLevel(currentQualityIndex);
         UpdateQualityText();
+        ApplyDisplay(); // Apply changes immediately
     }
 
     public void LeftQuality()
@@ -129,6 +122,7 @@ public class DisplayScreen : MonoBehaviour
 
         QualitySettings.SetQualityLevel(currentQualityIndex);
         UpdateQualityText();
+        ApplyDisplay(); // Apply changes immediately
     }
 
     public void RightQuality()
@@ -139,6 +133,7 @@ public class DisplayScreen : MonoBehaviour
 
         QualitySettings.SetQualityLevel(currentQualityIndex);
         UpdateQualityText();
+        ApplyDisplay(); // Apply changes immediately
     }
 
     private void UpdateQualityText()
@@ -157,6 +152,7 @@ public class DisplayScreen : MonoBehaviour
         }
 
         UpdateResLabel();
+        ApplyDisplay(); // Apply changes immediately
     }
 
     public void RightResolution()
@@ -168,6 +164,7 @@ public class DisplayScreen : MonoBehaviour
         }
 
         UpdateResLabel();
+        ApplyDisplay(); // Apply changes immediately
     }
 
     public void UpdateResLabel()
@@ -180,7 +177,7 @@ public class DisplayScreen : MonoBehaviour
     {
         Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullScreenIsOn);
 
-        if(vsyncIsOn)
+        if (vsyncIsOn)
         {
             QualitySettings.vSyncCount = 1;
         }
@@ -188,6 +185,7 @@ public class DisplayScreen : MonoBehaviour
         {
             QualitySettings.vSyncCount = 0;
         }
+        SaveDisplaySettings(); // Save settings when applied
     }
 }
 
