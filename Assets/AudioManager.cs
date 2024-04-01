@@ -9,10 +9,14 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    // Volume keys for PlayerPrefs
+    private const string MusicVolumeKey = "MusicVolume";
+    private const string SFXVolumeKey = "SFXVolume";
+
     void Awake()
     {
         if (instance == null)
-            instance = this;  
+            instance = this;
         else
         {
             Destroy(gameObject);
@@ -21,6 +25,9 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        // Load volume settings
+        musicSource.volume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
+        sfxSource.volume = PlayerPrefs.GetFloat(SFXVolumeKey, 0.5f);
     }
 
     private void Start()
@@ -28,13 +35,12 @@ public class AudioManager : MonoBehaviour
         PlayMusic("MenuMusic");
     }
 
-
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(musicSounds, x => x.name == name);
         if (s == null)
         {
-            Debug.LogWarning("Sound: " + name + "not found!");
+            Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
 
@@ -43,7 +49,6 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = s.clip;
             musicSource.Play();
         }
-
     }
 
     public void PlaySFX(string name)
@@ -51,7 +56,7 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sfxSounds, x => x.name == name);
         if (s == null)
         {
-            Debug.LogWarning("Sound: " + name + "not found!");
+            Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
 
@@ -60,7 +65,6 @@ public class AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(s.clip);
         }
     }
-
 
     public void ToggleMusic()
     {
@@ -75,11 +79,17 @@ public class AudioManager : MonoBehaviour
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
+        // Save volume setting
+        PlayerPrefs.SetFloat(MusicVolumeKey, volume);
+        PlayerPrefs.Save();
     }
 
     public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
+        // Save volume setting
+        PlayerPrefs.SetFloat(SFXVolumeKey, volume);
+        PlayerPrefs.Save();
     }
 
     public float GetMusicVolume()
