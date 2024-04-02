@@ -11,14 +11,16 @@ public class Keybind : MonoBehaviour
     [SerializeField] private Text buttonLabel2;
     [SerializeField] private Text buttonLabel3;
     [SerializeField] private Text buttonLabel4;
+    [SerializeField] private Text buttonLabel5; // New button label for Left Shift
 
     public Text ButtonLabel1 => buttonLabel1;
     public Text ButtonLabel2 => buttonLabel2;
     public Text ButtonLabel3 => buttonLabel3;
     public Text ButtonLabel4 => buttonLabel4;
+    public Text ButtonLabel5 => buttonLabel5; // Expose the new button label
 
-    private string[] prefsKeys = { "CustomKey1", "CustomKey2", "CustomKey3", "CustomKey4" };
-    private KeyCode[] defaultKeys = { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D };
+    private string[] prefsKeys = { "CustomKey1", "CustomKey2", "CustomKey3", "CustomKey4", "CustomKey5" }; // Add new key preference
+    private KeyCode[] defaultKeys = { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D, KeyCode.LeftShift }; // Add new default key
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class Keybind : MonoBehaviour
         CheckAndUpdateButtonLabel(buttonLabel2, 1);
         CheckAndUpdateButtonLabel(buttonLabel3, 2);
         CheckAndUpdateButtonLabel(buttonLabel4, 3);
+        CheckAndUpdateButtonLabel(buttonLabel5, 4); // Check and update new button label
     }
 
     private void CheckAndUpdateButtonLabel(Text label, int index)
@@ -85,6 +88,9 @@ public class Keybind : MonoBehaviour
                         break;
                     case 3:
                         buttonLabel4.text = keyCode.ToString();
+                        break;
+                    case 4: // Handle the new label
+                        buttonLabel5.text = keyCode.ToString();
                         break;
                 }
             }

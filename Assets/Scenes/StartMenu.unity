@@ -6468,6 +6468,7 @@ GameObject:
   - component: {fileID: 745169758}
   - component: {fileID: 745169757}
   - component: {fileID: 745169759}
+  - component: {fileID: 745169760}
   m_Layer: 5
   m_Name: LSHIFT
   m_TagString: Untagged
@@ -6577,6 +6578,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &745169760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745169755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Lshift turn on and off
+  content: Use the checkbox to turn on and off the use of Lshift to control the car
 --- !u!1 &761560050
 GameObject:
   m_ObjectHideFlags: 0
@@ -18064,6 +18079,10 @@ PrefabInstance:
       propertyPath: buttonLabel4
       value: 
       objectReference: {fileID: 303800210}
+    - target: {fileID: 3440310757441445605, guid: 8d4e7a9d1eab02942932eba8ecc74715, type: 3}
+      propertyPath: buttonLabel5
+      value: 
+      objectReference: {fileID: 441847583}
     - target: {fileID: 4201644534512836356, guid: 8d4e7a9d1eab02942932eba8ecc74715, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

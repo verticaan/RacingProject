@@ -40,6 +40,9 @@ public class CarController : MonoBehaviour
 
     public float lerpSpeed = 5f;
 
+    private bool useLeftShiftToTurn = true;
+    private const string ToggleKey = "UseLeftShiftToTurn";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +50,11 @@ public class CarController : MonoBehaviour
         theRB.transform.parent = null;
         turningVFX.SetActive(false);
         landingVFX.SetActive(false);
+
+        if (PlayerPrefs.HasKey(ToggleKey))
+        {
+            useLeftShiftToTurn = PlayerPrefs.GetInt(ToggleKey) == 1;
+        }
     }
 
     // Method to enable input handling
@@ -58,6 +66,13 @@ public class CarController : MonoBehaviour
     public void DisableInput()
     {
         canInput = false;
+    }
+
+    public void ToggleLeftShiftTurn()
+    {
+        useLeftShiftToTurn = !useLeftShiftToTurn;
+        PlayerPrefs.SetInt(ToggleKey, useLeftShiftToTurn ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     // Update is called once per frame
@@ -78,13 +93,30 @@ public class CarController : MonoBehaviour
             targetSpeedInput = -1f; // Reverse
         }
 
-        if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel3.text)))
+        if (useLeftShiftToTurn) // Check if we should use Left Shift to turn
         {
-            targetTurnInput = -1f;
+            if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel5.text))) // Check if Left Shift is held down
+            {
+                if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel3.text)))
+                {
+                    targetTurnInput = -1f;
+                }
+                else if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel4.text)))
+                {
+                    targetTurnInput = 1f;
+                }
+            }
         }
-        else if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel4.text)))
+        else // If not using Left Shift, use ButtonLabel3 and ButtonLabel4 for turning
         {
-            targetTurnInput = 1f;
+            if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel3.text)))
+            {
+                targetTurnInput = -1f;
+            }
+            else if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel4.text)))
+            {
+                targetTurnInput = 1f;
+            }
         }
 
         if (targetSpeedInput >= 0)
@@ -105,7 +137,6 @@ public class CarController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime, 0f));
         }
-
 
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
         rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, turnInput * maxWheelTurn, rightFrontWheel.localRotation.eulerAngles.z);
