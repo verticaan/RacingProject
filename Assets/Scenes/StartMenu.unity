@@ -10247,6 +10247,7 @@ GameObject:
   - component: {fileID: 1307429969}
   - component: {fileID: 1307429968}
   - component: {fileID: 1307429967}
+  - component: {fileID: 1307429970}
   m_Layer: 5
   m_Name: Audio
   m_TagString: Untagged
@@ -10418,6 +10419,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307429965}
   m_CullTransparentMesh: 1
+--- !u!114 &1307429970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307429965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Audio
+  content: Adjust the volume for the music and Sound effect
 --- !u!1 &1322194608
 GameObject:
   m_ObjectHideFlags: 0
@@ -11640,6 +11655,7 @@ GameObject:
   - component: {fileID: 1437569541}
   - component: {fileID: 1437569540}
   - component: {fileID: 1437569539}
+  - component: {fileID: 1437569542}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -11775,6 +11791,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437569537}
   m_CullTransparentMesh: 1
+--- !u!114 &1437569542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437569537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Credits
+  content: Asset licensing and attribution
 --- !u!1 &1442769222
 GameObject:
   m_ObjectHideFlags: 0
@@ -13346,6 +13376,7 @@ GameObject:
   - component: {fileID: 1724806945}
   - component: {fileID: 1724806944}
   - component: {fileID: 1724806943}
+  - component: {fileID: 1724806946}
   m_Layer: 5
   m_Name: Display
   m_TagString: Untagged
@@ -13529,6 +13560,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724806941}
   m_CullTransparentMesh: 1
+--- !u!114 &1724806946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724806941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Display
+  content: tune the visuals of the game to your desire
 --- !u!1 &1755695361
 GameObject:
   m_ObjectHideFlags: 0
@@ -13674,6 +13719,7 @@ GameObject:
   - component: {fileID: 1804044590}
   - component: {fileID: 1804044589}
   - component: {fileID: 1804044588}
+  - component: {fileID: 1804044591}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -13845,6 +13891,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804044586}
   m_CullTransparentMesh: 1
+--- !u!114 &1804044591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804044586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Controls
+  content: Where you can adjust how you control your vehicle
 --- !u!1 &1813897135
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class CarSelectAnimScript : MonoBehaviour
         LeanTween.moveLocal(rightButton, new Vector3(390f, 0f, 0f), 0.5f).setDelay(0.5f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(leftButton, new Vector3(-390f, 0f, 0f), 0.5f).setDelay(0.7f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(homeButton, new Vector3(378.755f, -218.5f, 0f), 0.5f).setDelay(0.9f).setEase(LeanTweenType.easeSpring);
-        LeanTween.moveLocal(carStats, new Vector3(0f, -190.36f, 0f), 0.5f).setDelay(1.1f).setEase(LeanTweenType.easeSpring);
+        LeanTween.moveLocal(carStats, new Vector3(0f, -320.5f, 0f), 0.5f).setDelay(1.1f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(pickCar, new Vector3(-379f, 207f, 0f), 0.5f).setDelay(1.3f).setEase(LeanTweenType.easeSpring);
     }
 
@@ -22,7 +22,7 @@ public class CarSelectAnimScript : MonoBehaviour
         LeanTween.moveLocal(rightButton, new Vector3(504f, 0f, 0f), 0.5f).setDelay(0.5f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(leftButton, new Vector3(-524f, 0f, 0f), 0.5f).setDelay(0.7f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(homeButton, new Vector3(549f, -218.5f, 0f), 0.5f).setDelay(0.9f).setEase(LeanTweenType.easeSpring);
-        LeanTween.moveLocal(carStats, new Vector3(0f, -321f, 0f), 0.5f).setDelay(1.1f).setEase(LeanTweenType.easeSpring);
+        LeanTween.moveLocal(carStats, new Vector3(0f, -482f, 0f), 0.5f).setDelay(1.1f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(pickCar, new Vector3(-379, 345f, 0f), 0.5f).setDelay(1.3f).setEase(LeanTweenType.easeSpring);
     }
 
@@ -32,7 +32,7 @@ public class CarSelectAnimScript : MonoBehaviour
         LeanTween.moveLocal(rightButton, new Vector3(390f, 0f, 0f), 0.5f).setDelay(0.5f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(leftButton, new Vector3(-390f, 0f, 0f), 0.5f).setDelay(0.7f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(homeButton, new Vector3(378.755f, -218.5f, 0f), 0.5f).setDelay(0.9f).setEase(LeanTweenType.easeSpring);
-        LeanTween.moveLocal(carStats, new Vector3(0f, -190.36f, 0f), 0.5f).setDelay(1.1f).setEase(LeanTweenType.easeSpring);
+        LeanTween.moveLocal(carStats, new Vector3(0f, -320.5f, 0f), 0.5f).setDelay(1.1f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(pickCar, new Vector3(-379f, 207f, 0f), 0.5f).setDelay(1.3f).setEase(LeanTweenType.easeSpring);
     }
 }
