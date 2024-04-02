@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScreen.unity
     guid: 136fcc6cd7b16d74abe1440234e3e782
   - enabled: 1
-    path: Assets/Scenes/TutorialLevel 1.unity
+    path: Assets/Scenes/TutorialLevel.unity
     guid: 14a4d6b583f00d8479093dd56a25a21c
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Track C.unity
     guid: ae41f932d7090cc4c9106089c48d7e41
+  - enabled: 1
+    path: Assets/Scenes/TutorialLevel1.unity
+    guid: 8dc4e459aae39ae4fad6200466304911
   m_configObjects: {}

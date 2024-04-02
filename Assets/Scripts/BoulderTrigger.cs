@@ -16,7 +16,7 @@ public class BoulderTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && boulderSpawner != null && canSpawn)
+        if (other.CompareTag("Sphere") && boulderSpawner != null && canSpawn)
         {
             boulderSpawner.StartSpawning();
 
