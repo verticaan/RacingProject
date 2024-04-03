@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     {
         playerRB = GameObject.Find("Sphere").GetComponent<Rigidbody>(); //New Code
 
-        SpeedText.text = (playerRB.velocity.magnitude * 2.34693628f). ToString("0") + ("m/h");
+        SpeedText.text = (playerRB.velocity.magnitude * 2.34693628f). ToString("0") + ("MPH");
     }
 
 }

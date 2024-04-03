@@ -15,6 +15,7 @@ public class Driftmanager : MonoBehaviour
     public Text factorText;
     public Text driftAngleText;
     public Text highScoretext;
+    public Text highscoreRecordtext;
     public Text endTotalScoreText;
 
     private float speed = 0;
@@ -152,6 +153,8 @@ public class Driftmanager : MonoBehaviour
     void UpdateHighScoreText()
     {
         highScoretext.text = $"HIGH SCORE: {PlayerPrefs.GetFloat("HighScore", 0).ToString("###,###,000")}";
+
+        highscoreRecordtext.text = PlayerPrefs.GetFloat("HighScore", 0).ToString("###,###,000");
     }
 
 
