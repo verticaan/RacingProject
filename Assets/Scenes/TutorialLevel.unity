@@ -19447,19 +19447,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.41100326
+      value: 0.526549
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.034049604
+      value: -0.043788396
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9078876
+      value: 0.8460957
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.07521403
+      value: 0.07036226
       objectReference: {fileID: 0}
     - target: {fileID: 3975821907976357926, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: turnStrength
@@ -19495,23 +19495,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.40942934
+      value: 0.5207822
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.052749995
+      value: -0.09512293
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.90334904
+      value: 0.8345661
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.116385534
+      value: 0.15243681
       objectReference: {fileID: 0}
     - target: {fileID: 4701118537767804549, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Sphere
       objectReference: {fileID: 0}
     - target: {fileID: 4713099681719557455, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_AmplitudeGain
