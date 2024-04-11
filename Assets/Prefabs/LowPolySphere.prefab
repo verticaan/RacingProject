@@ -148,4 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissolveDuration: 4
   dissolveStrength: 0
-  spinSpeed: 100
+  spinSpeed: 300

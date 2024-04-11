@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315144475189844316}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.014682894, y: 0.96340615, z: 0.053960428, w: -0.26214746}
+  m_LocalRotation: {x: -0.09217189, y: -0.36352423, z: -0.03617234, w: 0.92630774}
   m_LocalPosition: {x: 0.03, y: -0.057, z: -2.486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 1.81, z: -4.19}
+  m_FollowOffset: {x: 0, y: 3.4, z: -4.19}
   m_XDamping: 1
   m_YDamping: 0.5
   m_ZDamping: 0.5
@@ -681,7 +681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4289058759974906248}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.074483365, y: 0.71246654, z: -0.6935336, w: -0.07651671}
+  m_LocalRotation: {x: 0.59176666, y: -0.38023528, z: 0.37119913, w: 0.6061721}
   m_LocalPosition: {x: -0.65, y: 500, z: 4.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11256,6 +11256,30 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0b9e5509623c1244396436ba787ad66c, type: 3}
       propertyPath: m_TagString
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502473988945055348, guid: 0b9e5509623c1244396436ba787ad66c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.8031363
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502473988945055348, guid: 0b9e5509623c1244396436ba787ad66c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.8031363
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502473988945055348, guid: 0b9e5509623c1244396436ba787ad66c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.803136
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502473988945055348, guid: 0b9e5509623c1244396436ba787ad66c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.55621
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502473988945055348, guid: 0b9e5509623c1244396436ba787ad66c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.20722273
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502473988945055348, guid: 0b9e5509623c1244396436ba787ad66c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.819582
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
