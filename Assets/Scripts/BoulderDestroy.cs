@@ -5,7 +5,6 @@ public class BoulderDestroy : MonoBehaviour
 {
     public float dissolveDuration = 2;
     public float dissolveStrength;
-    public float spinSpeed = 10f;
 
     public void StartDissolver()
     {
@@ -36,10 +35,5 @@ public class BoulderDestroy : MonoBehaviour
         {
             StartDissolver();
         }
-    }
-
-    void Update()
-    {
-        transform.Rotate(-spinSpeed * Time.deltaTime, 0f, 0f, Space.Self);
     }
 }

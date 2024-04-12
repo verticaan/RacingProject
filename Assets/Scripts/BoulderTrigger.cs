@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class BoulderTrigger : MonoBehaviour
 {
-    private BoulderSpawner boulderSpawner;
+    [SerializeField] private List<GameObject> boulderSpawners = new List<GameObject>();
     private bool canSpawn = true;
-    public float spawnCooldown = 10f; 
-
-    void Start()
-    {
-        boulderSpawner = FindObjectOfType<BoulderSpawner>();
-
-    }
+    public float spawnCooldown = 10f;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Sphere") && boulderSpawner != null && canSpawn)
+        if (other.CompareTag("Sphere") && boulderSpawners.Count > 0 && canSpawn)
         {
-            boulderSpawner.StartSpawning();
+            foreach (var spawner in boulderSpawners)
+            {
+                spawner.GetComponent<BoulderSpawner>().StartSpawning();
+            }
 
             canSpawn = false;
 
@@ -34,4 +31,3 @@ public class BoulderTrigger : MonoBehaviour
         canSpawn = true;
     }
 }
-
