@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseMenuAnimationScript : MonoBehaviour
 {
 
-    [SerializeField] GameObject leftTriangle, pauseCanvas, trackImage, trackName, resumeButton, restartButton, OptionsButton, quitButton, pauseTitle, optionsTitle, backtoPauseButton;
+    [SerializeField] GameObject leftTriangle, pauseCanvas, trackImage, trackName, resumeButton, restartButton, OptionsButton, quitButton, pauseTitle, optionsTitle, backtoPauseButton, quitDialogue; 
 
     void Start()
     {
@@ -70,7 +70,16 @@ public class PauseMenuAnimationScript : MonoBehaviour
         LeanTween.moveLocal(quitButton, new Vector3(1.900047f, -86.35919f, 0f), 1.3f).setDelay(0.5f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(trackImage, new Vector3(-186.1805f, -165.103f, 0f), 1.6f).setDelay(0.5f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
     }
+    public void QuitHolderAnimIn()
+    {
+        LeanTween.moveLocal(quitDialogue, new Vector3(0f, 0f, 0f), 0.7f).setDelay(0.5f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+    }
 
-    
+    public void QuitHolderAnimOut()
+    {
+        LeanTween.moveLocal(quitDialogue, new Vector3(0f, -476f, 0f), 0.7f).setDelay(0.5f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+    }
+
+
 
 }

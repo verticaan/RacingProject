@@ -16,6 +16,9 @@ public class TimeTrialEndScript : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        AudioManager.instance.musicSource.Stop();
+        AudioManager.instance.PlayMusic("TrackEndMusic");
+
         foreach (ParticleSystem particleSystem in confettiParticles)
         {
             particleSystem.Play();
