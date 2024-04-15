@@ -201,7 +201,8 @@ public class CarController : MonoBehaviour
     {
         if (landingVFX != null)
         {
-            landingVFX.SetActive(true);
+                AudioManager.instance.PlaySFX("LandingSound");
+                landingVFX.SetActive(true);
         }
 
         CameraShake();
@@ -218,6 +219,6 @@ public class CarController : MonoBehaviour
     // Method to implement camera shake
     void CameraShake()
     {
-        VehicleCameraShake.Instance.ShakeCamera(5f, 1f);
+        VehicleCameraShake.Instance.ShakeCamera(3f, 1f);
     }
 }

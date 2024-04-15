@@ -17,12 +17,13 @@ public class Driftmanager : MonoBehaviour
     public Text highScoretext;
     public Text highscoreRecordtext;
     public Text endTotalScoreText;
+    public Text highScoreEndCardText;
 
     private float speed = 0;
     private float driftAngle = 0;
     private float driftFactor = 1;
     private float currentScore;
-    private float totalScore;
+    public float totalScore;
 
     private bool isDrifting = false;
 
@@ -139,6 +140,8 @@ public class Driftmanager : MonoBehaviour
         driftAngleText.text = driftAngle.ToString("###,##0") + "°";
 
         endTotalScoreText.text = "DRIFT SCORE: " + totalScore.ToString("###,###,000");
+
+        highScoreEndCardText.text = totalScore.ToString("###,###,000");
     }
 
     void CheckHighscore()

@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class KillZoneTrigger : MonoBehaviour
 {
+    public GameObject player;
+
+    public GameObject restartMenu;
+
+    public GameObject HUD;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Sphere");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Sphere"))
+        {
+            HUD.SetActive(false);
+            restartMenu.SetActive(true);
+
+        }
     }
 }

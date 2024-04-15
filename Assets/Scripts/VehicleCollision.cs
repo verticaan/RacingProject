@@ -12,7 +12,7 @@ public class VehicleCollision : MonoBehaviour
         {
             Instantiate(impactEffect, collision.contacts[0].point, Quaternion.identity);
             CollisionCameraShake();
-            // Play sound effect
+            AudioManager.instance.PlaySFX("WallHit");
         }
     }
 

@@ -27,6 +27,8 @@ public class CountdownController : MonoBehaviour
 
     IEnumerator CountdownToStart()
     {
+        AudioManager.instance.PlaySFX("RaceCountdown");
+
         while (countdownTime > 0)
         {
             countdownDisplay.text = countdownTime.ToString();
