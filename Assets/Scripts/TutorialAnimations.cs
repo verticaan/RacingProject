@@ -23,7 +23,7 @@ public class TutorialAnimations : MonoBehaviour
 
     void Begin()
     {
-        carController.DisableInput();
+        //carController.DisableInput();
         LeanTween.moveLocal(tutorialTitleText, new Vector3(0f, 185f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 1f, 1f).setDelay(5f);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 0f, 2f).setDelay(10f).setOnComplete(Timer);
@@ -78,6 +78,6 @@ public class TutorialAnimations : MonoBehaviour
         LeanTween.alpha(endText.GetComponent<RectTransform>(), 1f, 3f).setDelay(4f);
         LeanTween.alpha(endText.GetComponent<RectTransform>(), 0f, 3f).setDelay(8f);
 
-        tutorialCountdownController.TutorialCountdown();
+        //tutorialCountdownController.TutorialCountdown();
     }
 }

@@ -8621,7 +8621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Art, Design and Programing
+  m_Text: Art, Design and Programming
 --- !u!222 &950303314
 CanvasRenderer:
   m_ObjectHideFlags: 0
