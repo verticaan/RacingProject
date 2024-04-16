@@ -14,6 +14,7 @@ TagManager:
   - Pendulum
   - CheckPoint
   - Car
+  - Ground
   layers:
   - Default
   - TransparentFX

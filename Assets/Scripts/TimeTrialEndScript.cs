@@ -5,19 +5,15 @@ using UnityEngine;
 public class TimeTrialEndScript : MonoBehaviour
 {
     public ParticleSystem[] confettiParticles;
-    public GameObject timeTrialEndUI;
     public LapTimer laptimer;
     public CheckpointTimerStarter checkpointTimerStarter;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TimeTrialEndAnimation timeTrialEndAnimation;
+
     void OnTriggerEnter(Collider other)
     {
-        AudioManager.instance.musicSource.Stop();
-        AudioManager.instance.PlayMusic("TrackEndMusic");
+        //AudioManager.instance.musicSource.Stop();
+        //AudioManager.instance.PlayMusic("TrackEndMusic");
 
         foreach (ParticleSystem particleSystem in confettiParticles)
         {
@@ -25,5 +21,8 @@ public class TimeTrialEndScript : MonoBehaviour
         }
         laptimer.StopLapTimer();
         checkpointTimerStarter.StopCountdown();
+
+        timeTrialEndAnimation.TimeTrialFinishAnimation();
+
     }
 }

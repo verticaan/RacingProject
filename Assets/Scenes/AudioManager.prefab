@@ -307,6 +307,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 90eb037ef3d7c6f46b33d6a132319d75, type: 3}
   - name: TrackEndMusic
     clip: {fileID: 8300000, guid: a4a984cc8b4f06344b477a87b5877b6b, type: 3}
+  - name: MainScreenMusic
+    clip: {fileID: 8300000, guid: 9c1ee0fb7da8e464b937b123c2bdbc55, type: 3}
   sfxSounds:
   - name: QuitSound
     clip: {fileID: 8300000, guid: b5438b176b2624449805f167afd0115d, type: 3}
@@ -329,10 +331,12 @@ MonoBehaviour:
   - name: 10TimeSound
     clip: {fileID: 8300000, guid: 62cd75bfb14e79b43a66cd7c844595f4, type: 3}
   - name: LandingSound
-    clip: {fileID: 8300000, guid: 98c1d940e9cbdd94d9ef20d62001fe5a, type: 3}
+    clip: {fileID: 8300000, guid: e00bc1b63aff2e84c89ef8ca590a0789, type: 3}
   - name: DriftSound
     clip: {fileID: 8300000, guid: 1990844bcb0198147b2abc7e265beca6, type: 3}
   - name: WallHit
     clip: {fileID: 8300000, guid: 1ff87bea84b41154897f21590d4bd0a5, type: 3}
+  - name: RockFall
+    clip: {fileID: 8300000, guid: a1d2f7e515f220c4cb9e24ab7b5ca48e, type: 3}
   musicSource: {fileID: 1381675424660028942}
   sfxSource: {fileID: 1011409653540635869}

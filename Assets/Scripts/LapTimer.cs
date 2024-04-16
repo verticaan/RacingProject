@@ -8,8 +8,13 @@ public class LapTimer : MonoBehaviour
     public Text currentTimeText;
     public Text trackRecordText;
 
-    private float currentLapTime;
-    private float trackRecordTime;
+    public Text finishCurrentTimeText;
+    public Text finishtrackRecordText;
+
+    public Text finalTrackRecordText;
+
+    public float currentLapTime;
+    public float trackRecordTime;
 
     private bool isTimerRunning = false;
 
@@ -42,8 +47,13 @@ public class LapTimer : MonoBehaviour
             trackRecordTime = currentLapTime;
             PlayerPrefs.SetFloat("TrackRecord", trackRecordTime);
             trackRecordText.text = FormatTime(trackRecordTime);
-            //Congratulate player
         }
+
+        finishCurrentTimeText.text = "LAP TIME: " + FormatTime(currentLapTime);
+
+        finishtrackRecordText.text = "HIGHSCORE: " + FormatTime(trackRecordTime);
+
+        finalTrackRecordText.text = FormatTime(trackRecordTime);
     }
 
     void DisplayTime()

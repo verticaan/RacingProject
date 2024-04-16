@@ -18,11 +18,14 @@ public class CountdownController : MonoBehaviour
     {
         carController = GameObject.FindObjectOfType<CarController>();
 
+        //CountdownTextUI.SetActive(true);
+        //StartCoroutine(CountdownToStart());
+    }
+
+    public void CountDownBegin()
+    {
         CountdownTextUI.SetActive(true);
-
         StartCoroutine(CountdownToStart());
-
-
     }
 
     IEnumerator CountdownToStart()

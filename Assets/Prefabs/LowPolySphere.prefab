@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 759716325075403392}
   - component: {fileID: 2554343988017493139}
   - component: {fileID: 385558436939476530}
+  - component: {fileID: -1780157611078439103}
+  - component: {fileID: 6669622902867771944}
   m_Layer: 0
   m_Name: LowPolySphere
-  m_TagString: Untagged
+  m_TagString: Boulder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,6 +148,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9181c70dfbc6ef04e8b9b17d5c33173b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveDuration: 4
+  dissolveDuration: 20
   dissolveStrength: 0
-  spinSpeed: 0
+--- !u!114 &-1780157611078439103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8091078366265317834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7071b9118f1f3e4a8688db9d869d437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boulderVFXPrefab: {fileID: 0}
+--- !u!114 &6669622902867771944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8091078366265317834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904bf43893b04694f9a843e9e5c07e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  playerYRotation: -180
+  car: {fileID: 0}
+  carDamageAnimation: {fileID: 0}
