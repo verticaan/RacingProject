@@ -3,22 +3,22 @@ using UnityEngine.UI;
 
 public class ColliderTextDisplay : MonoBehaviour
 {
-    public Text displayText; // Reference to the UI Text element
-    public string message = "Enter your message here"; // Message to display
+    public Text displayText;
+    public string message = "Enter your message here";
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Check if the collider is triggered by the player (or another specific tag)
+        if (other.CompareTag("Sphere"))
         {
-            displayText.text = message; // Set the text to be displayed
+            displayText.text = message;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) // Check if the collider is exited by the player (or another specific tag)
+        if (other.CompareTag("Sphere"))
         {
-            displayText.text = ""; // Clear the text when the player exits the collider
+            displayText.text = "";
         }
     }
 }

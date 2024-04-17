@@ -10,7 +10,6 @@ public class TutorialEnd : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        TutorialUI.SetActive(true);
         foreach (ParticleSystem particleSystem in confettiParticles)
         {
             particleSystem.Play();
@@ -21,10 +20,8 @@ public class TutorialEnd : MonoBehaviour
 
     IEnumerator EndTutorial()
     {
-        // Wait for 2 seconds before loading the next scene
+        TutorialUI.SetActive(true);
         yield return new WaitForSeconds(8f);
-
-        // Load the next scene
         SceneManager.LoadScene(2);
     }
 }
