@@ -10,6 +10,8 @@ public class TutorialCountdownController : MonoBehaviour
     private CarController carController;
     public GameObject CountdownTextUI;
 
+    public GameObject tutorialTriggerBoxUI;
+
     private bool gameStarted = false;
 
     public void TutorialCountdown()
@@ -25,6 +27,7 @@ public class TutorialCountdownController : MonoBehaviour
 
     IEnumerator CountdownToStart()
     {
+        AudioManager.instance.PlaySFX("RaceCountdown");
         while (countdownTime > 0)
         {
             countdownDisplay.text = countdownTime.ToString();
@@ -40,6 +43,8 @@ public class TutorialCountdownController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         countdownDisplay.gameObject.SetActive(false);
+
+        tutorialTriggerBoxUI.SetActive(true);
 
     }
 }

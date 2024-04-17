@@ -305,10 +305,14 @@ MonoBehaviour:
   musicSounds:
   - name: MenuMusic
     clip: {fileID: 8300000, guid: 90eb037ef3d7c6f46b33d6a132319d75, type: 3}
-  - name: TrackEndMusic
-    clip: {fileID: 8300000, guid: a4a984cc8b4f06344b477a87b5877b6b, type: 3}
   - name: MainScreenMusic
     clip: {fileID: 8300000, guid: 9c1ee0fb7da8e464b937b123c2bdbc55, type: 3}
+  - name: Level2Music
+    clip: {fileID: 8300000, guid: 249eb67615e9d334fb0ea2c3be709224, type: 3}
+  - name: Level1Music
+    clip: {fileID: 8300000, guid: 23a54556c5361d34e91090054601e432, type: 3}
+  - name: TutorialMusic
+    clip: {fileID: 8300000, guid: 3f8fdc0d7e66c354c9ba9d09259ff821, type: 3}
   sfxSounds:
   - name: QuitSound
     clip: {fileID: 8300000, guid: b5438b176b2624449805f167afd0115d, type: 3}
@@ -338,5 +342,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1ff87bea84b41154897f21590d4bd0a5, type: 3}
   - name: RockFall
     clip: {fileID: 8300000, guid: a1d2f7e515f220c4cb9e24ab7b5ca48e, type: 3}
+  - name: BeatHighscore
+    clip: {fileID: 8300000, guid: c7f4729fff9027f4cb8b43cd81f6b1e8, type: 3}
   musicSource: {fileID: 1381675424660028942}
   sfxSource: {fileID: 1011409653540635869}

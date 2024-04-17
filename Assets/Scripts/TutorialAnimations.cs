@@ -5,11 +5,9 @@ using UnityEngine;
 public class TutorialAnimations : MonoBehaviour
 {
     [SerializeField]
-    GameObject hudPanel, driftscoreUI, timerUI, speedUI, minimapUI, driftUI, countdownUI, 
+    GameObject driftscoreUI, timerUI, speedUI, minimapUI, driftUI, countdownUI, tutorialTitleText, welcomeText, timerText, speedGuageText, minimapText, driftscoreText, endText, driftUiText;
 
-    tutorialSequenceBoxUI, tutorialTitleText, welcomeText, timerText, speedGuageText, minimapText, driftscoreText, endText, hudUI, driftUiText;
-
-    public GameObject tutorialTriggerBoxUI;
+    public GameObject driftAngle, driftMultiplier;
 
     private CarController carController;
 
@@ -18,15 +16,14 @@ public class TutorialAnimations : MonoBehaviour
     {
 
         carController = GameObject.FindObjectOfType<CarController>();
-        tutorialTriggerBoxUI.SetActive(false);
         Begin();
 
     }
 
     void Begin()
     {
-        carController.EnableInput();
-        LeanTween.moveLocal(tutorialTitleText, new Vector3(0f, 185f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
+        carController.DisableInput();
+        LeanTween.moveLocal(tutorialTitleText, new Vector3(-32f, 185f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 1f, 1f).setDelay(4f);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 0f, 2f).setDelay(6f).setOnComplete(Timer);
     }
@@ -36,18 +33,18 @@ public class TutorialAnimations : MonoBehaviour
         LeanTween.moveLocal(timerUI, new Vector3(404.4f, 213.9059f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.alpha(timerText.GetComponent<RectTransform>(), 1f, 1f).setDelay(4f);
         LeanTween.alpha(timerUI.GetComponent<RectTransform>(), 0f, 2f).setDelay(6f).setLoopPingPong().setRepeat(6);//must be even
-        LeanTween.alpha(timerText.GetComponent<RectTransform>(), 0f, 2f).setDelay(8f).setOnComplete(Minimap);
+        LeanTween.alpha(timerText.GetComponent<RectTransform>(), 0f, 2f).setDelay(8f).setOnComplete(DriftScore);
         
 
     }
 
-    //void DriftScore()
-    //{
-    //    LeanTween.moveLocal(driftscoreUI, new Vector3(-220f, 210f, 0f), 3f).setDelay(3f).setEase(LeanTweenType.easeOutElastic);
-    //    LeanTween.alpha(driftscoreText.GetComponent<RectTransform>(), 1f, 1f).setDelay(4f);
-    //    LeanTween.alpha(driftscoreUI.GetComponent<RectTransform>(), 0f, 2f).setDelay(6f).setLoopPingPong().setRepeat(6);//must be even
-    //    LeanTween.alpha(driftscoreText.GetComponent<RectTransform>(), 0f, 2f).setDelay(13f).setOnComplete(Minimap);
-    //}
+    void DriftScore()
+    {
+        LeanTween.moveLocal(driftscoreUI, new Vector3(-340.9f, 143.5f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.alpha(driftscoreText.GetComponent<RectTransform>(), 1f, 1f).setDelay(4f);
+        LeanTween.alpha(driftscoreUI.GetComponent<RectTransform>(), 0f, 2f).setDelay(6f).setLoopPingPong().setRepeat(6);//must be even
+        LeanTween.alpha(driftscoreText.GetComponent<RectTransform>(), 0f, 2f).setDelay(8f).setOnComplete(Minimap);
+    }
 
     void Minimap()
     {
@@ -78,10 +75,11 @@ public class TutorialAnimations : MonoBehaviour
     void End()
     {
         LeanTween.alpha(endText.GetComponent<RectTransform>(), 1f, 2f).setDelay(2f);
-        LeanTween.alpha(endText.GetComponent<RectTransform>(), 0f, 4f).setDelay(4f);
+        LeanTween.alpha(endText.GetComponent<RectTransform>(), 0f, 2f).setDelay(2f);
+
+        driftAngle.SetActive(false);
+        driftMultiplier.SetActive(false);
 
         tutorialCountdownController.TutorialCountdown();
-
-        tutorialTriggerBoxUI.SetActive(true);
     }
 }

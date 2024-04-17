@@ -20,9 +20,9 @@ public class TutorialEnd : MonoBehaviour
 
     IEnumerator EndTutorial()
     {
+        yield return new WaitForSeconds(3f);
         TutorialUI.SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(2);
     }
 }
-
