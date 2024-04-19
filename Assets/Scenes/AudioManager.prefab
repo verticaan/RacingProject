@@ -310,7 +310,7 @@ MonoBehaviour:
   - name: Level2Music
     clip: {fileID: 8300000, guid: 249eb67615e9d334fb0ea2c3be709224, type: 3}
   - name: Level1Music
-    clip: {fileID: 8300000, guid: 23a54556c5361d34e91090054601e432, type: 3}
+    clip: {fileID: 8300000, guid: 9661c4f1f0f85544eb36a63b5c9a341c, type: 3}
   - name: TutorialMusic
     clip: {fileID: 8300000, guid: 3f8fdc0d7e66c354c9ba9d09259ff821, type: 3}
   sfxSounds:
