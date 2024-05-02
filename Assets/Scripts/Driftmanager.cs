@@ -75,22 +75,36 @@ public class Driftmanager : MonoBehaviour
         driftGuageImage1.fillAmount = driftAngle * fillSpeedCoefficient;
         driftGuageImage2.fillAmount = driftAngle * fillSpeedCoefficient;
 
+        // Check if the car is grounded before allowing drifting
+        bool isGrounded = Physics.Raycast(playerRB.transform.position, -playerRB.transform.up, 1.0f);
 
-        if (driftAngle >= minimumAngle && speed > minimumSpeed)
+        if (isGrounded)
         {
-            if (!isDrifting || stopDriftingCoroutine != null)
+            if (driftAngle >= minimumAngle && speed > minimumSpeed)
             {
-                StartDrift();
+                if (!isDrifting || stopDriftingCoroutine != null)
+                {
+                    StartDrift();
+                }
+            }
+            else
+            {
+                if (isDrifting && stopDriftingCoroutine == null)
+                {
+                    StopDrift();
+                }
             }
         }
         else
         {
-            if (isDrifting && stopDriftingCoroutine == null)
+            // If the car is not grounded, stop drifting
+            if (isDrifting)
             {
                 StopDrift();
             }
         }
-        if (isDrifting && scoringEnabled)
+
+        if (isDrifting && scoringEnabled && isGrounded)
         {
             currentScore += Time.deltaTime * driftAngle * driftFactor;
             driftFactor += Time.deltaTime;
@@ -104,7 +118,6 @@ public class Driftmanager : MonoBehaviour
         {
             await Task.Delay(Mathf.RoundToInt(1000 * driftingDelay));
             driftFactor = 1;
-            AudioManager.instance.PlaySFX("DriftSound");
         }
         if (stopDriftingCoroutine != null)
         {

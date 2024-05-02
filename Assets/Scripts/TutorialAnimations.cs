@@ -12,9 +12,9 @@ public class TutorialAnimations : MonoBehaviour
     private CarController carController;
 
     public TutorialCountdownController tutorialCountdownController;
+
     void Start()
     {
-
         carController = GameObject.FindObjectOfType<CarController>();
         Begin();
 
@@ -23,7 +23,7 @@ public class TutorialAnimations : MonoBehaviour
     void Begin()
     {
         carController.DisableInput();
-        LeanTween.moveLocal(tutorialTitleText, new Vector3(-32f, 185f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveLocal(tutorialTitleText, new Vector3(0f, 185f, 0f), 2f).setDelay(2f).setEase(LeanTweenType.easeOutElastic);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 1f, 1f).setDelay(4f);
         LeanTween.alpha(welcomeText.GetComponent<RectTransform>(), 0f, 2f).setDelay(6f).setOnComplete(Timer);
     }

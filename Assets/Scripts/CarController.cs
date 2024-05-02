@@ -40,8 +40,10 @@ public class CarController : MonoBehaviour
 
     public float lerpSpeed = 5f;
 
-    private bool useLeftShiftToTurn = true;
+    private bool useLeftShiftToTurn = false;
     private const string ToggleKey = "UseLeftShiftToTurn";
+
+    public AudioSource drivingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +56,7 @@ public class CarController : MonoBehaviour
         if (PlayerPrefs.HasKey(ToggleKey))
         {
             useLeftShiftToTurn = PlayerPrefs.GetInt(ToggleKey) == 1;
+
         }
     }
 
@@ -84,6 +87,7 @@ public class CarController : MonoBehaviour
         float targetSpeedInput = 0f;
         float targetTurnInput = 0f;
 
+        // Instead of direct Input.GetKey calls, use keybindScript to get the assigned keys
         if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel1.text)))
         {
             targetSpeedInput = 1f; // Forward
@@ -93,7 +97,7 @@ public class CarController : MonoBehaviour
             targetSpeedInput = -1f; // Reverse
         }
 
-        if (useLeftShiftToTurn) // Check if we should use Left Shift to turn
+        if (useLeftShiftToTurn)
         {
             if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel5.text))) // Check if Left Shift is held down
             {
@@ -107,7 +111,7 @@ public class CarController : MonoBehaviour
                 }
             }
         }
-        else // If not using Left Shift, use ButtonLabel3 and ButtonLabel4 for turning
+        else
         {
             if (Input.GetKey((KeyCode)Enum.Parse(typeof(KeyCode), keybindScript.ButtonLabel3.text)))
             {
@@ -175,12 +179,29 @@ public class CarController : MonoBehaviour
             {
                 theRB.AddForce(transform.forward * speedInput);
                 emissionRate = maxEmission;
+
+                if (!drivingSound.isPlaying)
+                {
+                    drivingSound.Play();
+                }
+            }
+            else // If speed is zero or less, stop the driving sound
+            {
+                if (drivingSound.isPlaying)
+                {
+                    drivingSound.Stop();
+                }
             }
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnStrength * Time.deltaTime);
         }
         else
         {
             transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+
+            if (drivingSound.isPlaying)
+            {
+                drivingSound.Stop();
+            }
 
             theRB.drag = 0.1f;
             theRB.AddForce(Vector3.up * -gravityForce * 100f);
@@ -198,22 +219,22 @@ public class CarController : MonoBehaviour
         }
 
         if (!wasGrounded && grounded)
-    {
-        if (landingVFX != null)
         {
+            if (landingVFX != null)
+            {
                 AudioManager.instance.PlaySFX("LandingSound");
                 landingVFX.SetActive(true);
-        }
+            }
 
-        CameraShake();
-    }
-    else if (wasGrounded && !grounded)
-    {
-        if (landingVFX != null)
-        {
-            landingVFX.SetActive(false);
+            CameraShake();
         }
-    }
+        else if (wasGrounded && !grounded)
+        {
+            if (landingVFX != null)
+            {
+                landingVFX.SetActive(false);
+            }
+        }
     }
 
     // Method to implement camera shake

@@ -8,6 +8,7 @@ public class CarSelectAnimScript : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.PlaySFX("GarageOpen");
         LeanTween.moveLocal(playButton, new Vector3(0f, 225f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(rightButton, new Vector3(390f, 0f, 0f), 0.5f).setDelay(0.5f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(leftButton, new Vector3(-390f, 0f, 0f), 0.5f).setDelay(0.7f).setEase(LeanTweenType.easeSpring);
@@ -18,6 +19,7 @@ public class CarSelectAnimScript : MonoBehaviour
 
     public void CarButtonsOut()
     {
+        AudioManager.instance.PlaySFX("OpenBooklet");
         LeanTween.moveLocal(playButton, new Vector3(0f, 346f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(rightButton, new Vector3(504f, 0f, 0f), 0.5f).setDelay(0.5f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(leftButton, new Vector3(-524f, 0f, 0f), 0.5f).setDelay(0.7f).setEase(LeanTweenType.easeSpring);

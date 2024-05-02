@@ -12,7 +12,7 @@ public class ToggleLshift : MonoBehaviour
     void Start()
     {
         carController = GameObject.FindWithTag("Player").GetComponent<CarController>();
-        toggle.isOn = PlayerPrefs.GetInt(ToggleKey, 1) == 1;
+        toggle.isOn = PlayerPrefs.GetInt(ToggleKey, 0) == 1;
     }
 
     public void ToggleLeftShiftTurn()

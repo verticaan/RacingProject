@@ -8176,6 +8176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1011409653540635869, guid: 099d9f9595a1b5e4a87162f8e8560530, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7572434202104256865, guid: 099d9f9595a1b5e4a87162f8e8560530, type: 3}
       propertyPath: m_Name
       value: AudioManager

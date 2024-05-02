@@ -10,7 +10,9 @@ public class VehicleCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Instantiate(impactEffect, collision.contacts[0].point, Quaternion.identity);
+            GameObject impact = Instantiate(impactEffect, transform.position, Quaternion.identity);
+            Destroy(impact, 1f);
+
             CollisionCameraShake();
             AudioManager.instance.PlaySFX("WallHit");
         }

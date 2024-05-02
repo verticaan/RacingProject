@@ -313,6 +313,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9661c4f1f0f85544eb36a63b5c9a341c, type: 3}
   - name: TutorialMusic
     clip: {fileID: 8300000, guid: 3f8fdc0d7e66c354c9ba9d09259ff821, type: 3}
+  - name: CarSound
+    clip: {fileID: 8300000, guid: b049660b860c8334a852b54855bce599, type: 3}
   sfxSounds:
   - name: QuitSound
     clip: {fileID: 8300000, guid: b5438b176b2624449805f167afd0115d, type: 3}
@@ -348,5 +350,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9673e0bbaba6e0d4bbdc88f949a7f373, type: 3}
   - name: FinishRace
     clip: {fileID: 8300000, guid: c7f4729fff9027f4cb8b43cd81f6b1e8, type: 3}
+  - name: OpenBooklet
+    clip: {fileID: 8300000, guid: 29549571fcd6d7a46be1eff7ac4717e9, type: 3}
+  - name: GarageOpen
+    clip: {fileID: 8300000, guid: 6c4f0df741bf4af4b809f0839ddcc085, type: 3}
   musicSource: {fileID: 1381675424660028942}
   sfxSource: {fileID: 1011409653540635869}

@@ -607,6 +607,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4482073530195000374, guid: 13a36273996b99d4aa5fb89e36100138, type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482073530195000374, guid: 13a36273996b99d4aa5fb89e36100138, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 77245898}
@@ -656,8 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header: Simple/Arcade Controls
-  content: This should help you toggle between using A and D alongside LSHIFT to
-    turn
+  content: Use Lshit with A and D to turn?
 --- !u!1 &77245893
 GameObject:
   m_ObjectHideFlags: 0
@@ -8035,8 +8038,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header: Skip Tutorial
-  content: This will skip the whole tutorial and take you to the main menu
+  header: 
+  content: Skip to Menu
 --- !u!4 &232082932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5875549039316894746, guid: 714b1666e753d7046abf3c69fb2fac82, type: 3}
@@ -40698,7 +40701,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 85f8f473c44f72d4a96a188a5f8d7056, type: 3}
+    m_Font: {fileID: 12800000, guid: dceb00933e56656429605c700e96375c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -40710,7 +40713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Toggle for easy controls
+  m_Text: Select for Hard controls
 --- !u!222 &1050807791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40966,9 +40969,9 @@ RectTransform:
   - {fileID: 1597117208}
   m_Father: {fileID: 428920544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -32, y: 43}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 268}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113523972
@@ -46365,7 +46368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137231837}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20247462, y: -0.000000020919032, z: 0.000000004325158, w: 0.9792875}
+  m_LocalRotation: {x: 0.20247461, y: 0.000000014988803, z: -0.0000000030990406, w: 0.9792875}
   m_LocalPosition: {x: 137.5, y: 1.26, z: -483.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47265,17 +47268,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193158820}
-  m_LocalRotation: {x: 0, y: 0, z: 0.06975647, w: 0.9975641}
+  m_LocalRotation: {x: 0, y: 0, z: 0.14003724, w: 0.9901463}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1893697609}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 16.1}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 68.5, y: -92.8}
-  m_SizeDelta: {x: 116.2654, y: 38.697}
+  m_AnchoredPosition: {x: 44.184025, y: -77.06848}
+  m_SizeDelta: {x: 111.4444, y: 28.5917}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193158822
 MonoBehaviour:
@@ -47299,7 +47302,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dceb00933e56656429605c700e96375c, type: 3}
-    m_FontSize: 30
+    m_FontSize: 22
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -60753,8 +60756,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -97.5, y: -37.6}
-  m_SizeDelta: {x: 138.31, y: 52.5}
+  m_AnchoredPosition: {x: -65.4698, y: -29.9}
+  m_SizeDelta: {x: 112.1479, y: 29.4737}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554723440
 MonoBehaviour:
@@ -60778,12 +60781,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dceb00933e56656429605c700e96375c, type: 3}
-    m_FontSize: 30
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 51
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -78598,7 +78601,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 745, y: 213.90588}
-  m_SizeDelta: {x: 285.4552, y: 153.7986}
+  m_SizeDelta: {x: 210.9136, y: 124.6301}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1893697610
 MonoBehaviour:
@@ -78854,7 +78857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9490196, g: 0.8862745, b: 0.019607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -79266,19 +79269,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8035295
+      value: 0.46177754
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04375294
+      value: 0.026554983
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.59277666
+      value: 0.8851359
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.032277245
+      value: -0.050900623
       objectReference: {fileID: 0}
     - target: {fileID: 3975821907976357926, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: turnStrength
@@ -79314,19 +79317,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.78394985
+      value: 0.4604134
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18856564
+      value: -0.05981447
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.57509214
+      value: 0.8783062
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.13832852
+      value: 0.11410489
       objectReference: {fileID: 0}
     - target: {fileID: 4701118537767804549, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_TagString
@@ -79370,15 +79373,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8155720943494341509, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20247462
+      value: 0.20247461
       objectReference: {fileID: 0}
     - target: {fileID: 8155720943494341509, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000020919032
+      value: 0.000000014988803
       objectReference: {fileID: 0}
     - target: {fileID: 8155720943494341509, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000004325158
+      value: -0.0000000030990406
       objectReference: {fileID: 0}
     - target: {fileID: 8508229446961282817, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_Name
@@ -79845,7 +79848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u23CE To Skip"
+  m_Text: "\u23CE To Menu"
 --- !u!222 &2023023244
 CanvasRenderer:
   m_ObjectHideFlags: 0
