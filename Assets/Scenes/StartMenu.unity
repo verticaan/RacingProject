@@ -3226,7 +3226,6 @@ GameObject:
   - component: {fileID: 319879627}
   - component: {fileID: 319879626}
   - component: {fileID: 319879625}
-  - component: {fileID: 319879628}
   - component: {fileID: 319879629}
   m_Layer: 5
   m_Name: Game Mode
@@ -3313,18 +3312,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1262355094}
-        m_TargetAssemblyTypeName: ToolTipSystem, Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &319879626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3363,20 +3350,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319879623}
   m_CullTransparentMesh: 1
---- !u!114 &319879628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319879623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: Begin Game
-  content: Start your drift adventure
 --- !u!114 &319879629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7367,7 +7340,6 @@ GameObject:
   - component: {fileID: 778622986}
   - component: {fileID: 778622985}
   - component: {fileID: 778622988}
-  - component: {fileID: 778622989}
   - component: {fileID: 778622990}
   m_Layer: 5
   m_Name: Tutorial
@@ -7442,18 +7414,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1262355094}
-        m_TargetAssemblyTypeName: ToolTipSystem, Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 778622988}
         m_TargetAssemblyTypeName: LoadLevel, Assembly-CSharp
         m_MethodName: LoadLevelNumber
@@ -7516,20 +7476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d14cfd2912346439e4f1a61e2bf589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &778622989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778622983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: Tutorial
-  content: Always come back here to learn the ropes
 --- !u!114 &778622990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17583,7 +17529,6 @@ GameObject:
   - component: {fileID: 1938046136}
   - component: {fileID: 1938046135}
   - component: {fileID: 1938046134}
-  - component: {fileID: 1938046137}
   - component: {fileID: 1938046138}
   m_Layer: 5
   m_Name: Options
@@ -17658,18 +17603,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1262355094}
-        m_TargetAssemblyTypeName: ToolTipSystem, Assembly-CSharp
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 761560050}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -17744,20 +17677,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938046132}
   m_CullTransparentMesh: 1
---- !u!114 &1938046137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938046132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1811d1d342fb34bb2a6e1b5e77792a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  header: Options
-  content: Here, you can adjust the game to your satisfaction
 --- !u!114 &1938046138
 MonoBehaviour:
   m_ObjectHideFlags: 0

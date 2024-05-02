@@ -314,6 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 193763732}
   - component: {fileID: 193763731}
+  - component: {fileID: 193763733}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -351,6 +352,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193763733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193763730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d14cfd2912346439e4f1a61e2bf589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &270700191
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -67}
+  m_AnchoredPosition: {x: 0, y: -95.06}
   m_SizeDelta: {x: 255.22388, y: 84.458984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741530162
@@ -1971,7 +1984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.585022, y: 7.6550293}
+  m_AnchoredPosition: {x: -1.5849609, y: 7.6550293}
   m_SizeDelta: {x: 50.62998, y: 52.410023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2144834424

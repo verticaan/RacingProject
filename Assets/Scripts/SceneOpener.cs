@@ -10,40 +10,36 @@ public class SceneOpener : MonoBehaviour
     public Image image;
     public Text progressText;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return) )
         {
-            LoadLevel(1);
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(1);
         }
     }
-    public void LoadLevel(int sceneIndex)
-    {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
-    }
+    //public void LoadLevel(int sceneIndex)
+    //{
+    //    StartCoroutine(LoadAsynchronously(sceneIndex));
+    //}
 
-    IEnumerator LoadAsynchronously(int sceneIndex)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+    //IEnumerator LoadAsynchronously(int sceneIndex)
+    //{
+    //    AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
-        loadingScreen.SetActive(true);
+    //    loadingScreen.SetActive(true);
 
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
+    //    while (!operation.isDone)
+    //    {
+    //        float progress = Mathf.Clamp01(operation.progress / .9f);
 
-            //slider.value = progress;
-            image.fillAmount = progress;
-            progressText.text = progress * 100f + "%";
+    //        //slider.value = progress;
+    //        image.fillAmount = progress;
+    //        progressText.text = progress * 100f + "%";
 
-            Debug.Log(progress);
+    //        Debug.Log(progress);
 
-            yield return null;
-        }
-    }
+    //        yield return null;
+    //    }
+    //}
 }

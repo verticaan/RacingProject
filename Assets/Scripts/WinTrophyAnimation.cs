@@ -31,5 +31,6 @@ public class WinTrophyAnimation : MonoBehaviour
     {
         LeanTween.moveLocal(trackFinishHolder, new Vector3(0f, 0f, 0f), 0.5f).setDelay(0.5f).setEase(LeanTweenType.easeSpring);
         LeanTween.moveLocal(finishText, new Vector3(0f, 0f, 0f), 0.5f).setDelay(0.7f).setEase(LeanTweenType.easeInCubic);
+        AudioManager.instance.PlaySFX("FinishRace");
     }
 }

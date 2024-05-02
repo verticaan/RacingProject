@@ -16,7 +16,7 @@ public class PauseMenuAnimationScript : MonoBehaviour
     }
  public void PauseMenuAnimIn()
     {
-        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 1f, 0.5f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(leftTriangle, new Vector3(-230.8f, 15.81f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(pauseCanvas, new Vector3(815f, 0f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(resumeButton, new Vector3(1.900047f, 93.34082f, 0f), 0.7f).setDelay(0.5f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
@@ -29,8 +29,8 @@ public class PauseMenuAnimationScript : MonoBehaviour
 
     public void PauseMenuAnimOut()
     {
-        LeanTween.alpha(optionsTitle.GetComponent<RectTransform>(), 0f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
-        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 0f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+        LeanTween.alpha(optionsTitle.GetComponent<RectTransform>(), 0f, 0.5f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 0f, 0.5f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.alpha(backtoPauseButton.GetComponent<RectTransform>(), 0f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(leftTriangle, new Vector3(-755f, 15.81f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(pauseCanvas, new Vector3(1219.889f, 0f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
@@ -44,8 +44,8 @@ public class PauseMenuAnimationScript : MonoBehaviour
 
     public void OptionsMenuIn()
     {
-        LeanTween.alpha(optionsTitle.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
-        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 0f, 0.2f).setDelay(0.1f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+        LeanTween.alpha(optionsTitle.GetComponent<RectTransform>(), 1f, 0.5f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 0f, 0.5f).setDelay(0.1f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.alpha(backtoPauseButton.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.2f).setIgnoreTimeScale(true);
         LeanTween.moveLocal(leftTriangle, new Vector3(-755f, 15.81f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(pauseCanvas, new Vector3(335f, 0f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
@@ -58,8 +58,8 @@ public class PauseMenuAnimationScript : MonoBehaviour
     }
     public void OptionsMenuOut()
     {
-        LeanTween.alpha(optionsTitle.GetComponent<RectTransform>(), 0f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
-        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 1f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+        LeanTween.alpha(optionsTitle.GetComponent<RectTransform>(), 0f, 0.5f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
+        LeanTween.alpha(pauseTitle.GetComponent<RectTransform>(), 1f, 0.5f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.alpha(backtoPauseButton.GetComponent<RectTransform>(), 0f, 0.2f).setDelay(0.2f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(leftTriangle, new Vector3(-230.8f, 15.81f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);
         LeanTween.moveLocal(pauseCanvas, new Vector3(815f, 0f, 0f), 0.5f).setDelay(0.3f).setEase(LeanTweenType.easeSpring).setIgnoreTimeScale(true);

@@ -6,52 +6,51 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class LongPressButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class LongPressButton : MonoBehaviour
 {
-    private bool pointerDown;
-    private float pointerDownTimer;
+    private bool buttonPressed;
+    private float buttonPressedTimer;
 
     [SerializeField] private float requiredHoldTime = 3f;
 
-    public UnityEvent onLongClick;
+    public UnityEvent onLongPress;
 
     [SerializeField] private Image fillImage;
     [SerializeField] private Text fillText;
     [SerializeField] private Text skipText;
 
-    public void OnPointerDown(PointerEventData eventData)
+    void Update()
     {
-        pointerDown = true;
-        skipText.gameObject.SetActive(false);
-        fillText.gameObject.SetActive(true);
-        Debug.Log("OnPointerDown");
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (pointerDownTimer < requiredHoldTime)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            fillText.text = "";
+            buttonPressed = true;
+            skipText.gameObject.SetActive(false);
+            fillText.gameObject.SetActive(true);
+            Debug.Log("Enter key pressed");
         }
-        Reset();
-        skipText.gameObject.SetActive(true);
-        fillText.gameObject.SetActive(false);
-        Debug.Log("OnPointerUp");
-    }
-
-    private void Update()
-    {
-        if (pointerDown)
+        if (Input.GetKeyUp(KeyCode.Return))
         {
-            pointerDownTimer += Time.deltaTime;
-            if (pointerDownTimer > requiredHoldTime)
+            if (buttonPressedTimer < requiredHoldTime)
             {
-                if (onLongClick != null)
-                    onLongClick.Invoke();
+                fillText.text = "";
+            }
+            Reset();
+            skipText.gameObject.SetActive(true);
+            fillText.gameObject.SetActive(false);
+            Debug.Log("Enter key released");
+        }
+
+        if (buttonPressed)
+        {
+            buttonPressedTimer += Time.deltaTime;
+            if (buttonPressedTimer > requiredHoldTime)
+            {
+                if (onLongPress != null)
+                    onLongPress.Invoke();
 
                 Reset();
             }
-            fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
+            fillImage.fillAmount = buttonPressedTimer / requiredHoldTime;
 
             int percentage = Mathf.RoundToInt(fillImage.fillAmount * 100);
             fillText.text = percentage.ToString() + "%";
@@ -60,9 +59,9 @@ public class LongPressButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     private void Reset()
     {
-        pointerDown = false;
-        pointerDownTimer = 0;
-        fillImage.fillAmount = 0; 
+        buttonPressed = false;
+        buttonPressedTimer = 0;
+        fillImage.fillAmount = 0;
     }
 
     public void LoadLevelNumber(int _index)

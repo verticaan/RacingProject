@@ -104,6 +104,7 @@ public class Driftmanager : MonoBehaviour
         {
             await Task.Delay(Mathf.RoundToInt(1000 * driftingDelay));
             driftFactor = 1;
+            AudioManager.instance.PlaySFX("DriftSound");
         }
         if (stopDriftingCoroutine != null)
         {

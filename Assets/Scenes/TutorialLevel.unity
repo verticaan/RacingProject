@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 77245895}
   - component: {fileID: 77245894}
   - component: {fileID: 77245898}
+  - component: {fileID: 77245899}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -784,6 +785,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggle: {fileID: 67075868}
   carController: {fileID: 0}
+--- !u!114 &77245899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77245893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9d14cfd2912346439e4f1a61e2bf589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &77320553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6367,7 +6380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredHoldTime: 3
-  onLongClick:
+  onLongPress:
     m_PersistentCalls:
       m_Calls: []
   fillImage: {fileID: 1402489911}
@@ -7909,12 +7922,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da5ea34f7cead94d95389acf027ed79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredHoldTime: 3
-  onLongClick:
+  requiredHoldTime: 1.5
+  onLongPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 229800125}
-        m_TargetAssemblyTypeName: LongPressButton, Assembly-CSharp
+      - m_Target: {fileID: 77245899}
+        m_TargetAssemblyTypeName: LoadLevel, Assembly-CSharp
         m_MethodName: LoadLevelNumber
         m_Mode: 3
         m_Arguments:
@@ -40929,7 +40942,6 @@ GameObject:
   - component: {fileID: 1113523970}
   - component: {fileID: 1113523973}
   - component: {fileID: 1113523972}
-  - component: {fileID: 1113523971}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -40959,18 +40971,6 @@ RectTransform:
   m_AnchoredPosition: {x: -32, y: 43}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1113523971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113523969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9d14cfd2912346439e4f1a61e2bf589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1113523972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46365,7 +46365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137231837}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20247461, y: 0.000000014988803, z: -0.0000000030990406, w: 0.9792875}
+  m_LocalRotation: {x: 0.20247462, y: -0.000000020919032, z: 0.000000004325158, w: 0.9792875}
   m_LocalPosition: {x: 137.5, y: 1.26, z: -483.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -79266,19 +79266,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9062632
+      value: 0.8035295
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.09990739
+      value: -0.04375294
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4082645
+      value: 0.59277666
       objectReference: {fileID: 0}
     - target: {fileID: 1792186665540846594, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.045007505
+      value: 0.032277245
       objectReference: {fileID: 0}
     - target: {fileID: 3975821907976357926, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: turnStrength
@@ -79314,19 +79314,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.89271307
+      value: 0.78394985
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18776834
+      value: -0.18856564
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.4008705
+      value: 0.57509214
       objectReference: {fileID: 0}
     - target: {fileID: 4601443384079099958, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.084316894
+      value: 0.13832852
       objectReference: {fileID: 0}
     - target: {fileID: 4701118537767804549, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_TagString
@@ -79370,15 +79370,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8155720943494341509, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.20247461
+      value: 0.20247462
       objectReference: {fileID: 0}
     - target: {fileID: 8155720943494341509, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000014988803
+      value: -0.000000020919032
       objectReference: {fileID: 0}
     - target: {fileID: 8155720943494341509, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000030990406
+      value: 0.000000004325158
       objectReference: {fileID: 0}
     - target: {fileID: 8508229446961282817, guid: 54013e7c75710cc478bc9be56965649d, type: 3}
       propertyPath: m_Name
@@ -79833,11 +79833,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 1635138c1a30e9b42ac620b8cee1ef4a, type: 3}
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -79845,7 +79845,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hold to Skip
+  m_Text: "\u23CE To Skip"
 --- !u!222 &2023023244
 CanvasRenderer:
   m_ObjectHideFlags: 0
