@@ -97,7 +97,7 @@ public class Driftmanager : MonoBehaviour
         }
         else
         {
-            // If the car is not grounded, stop drifting
+            // If the car is not grounded it won't drift
             if (isDrifting)
             {
                 StopDrift();
